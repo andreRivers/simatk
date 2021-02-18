@@ -57,6 +57,27 @@
                             <?php } ?>
                         </ul>
                     </li>
+
+                <?php if ($user['role_id'] == '4') { ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Tagihan<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                             <li><a href="<?= base_url('tagihan/masukan'); ?>">Masukan Tagihan</a></li>
+                            <li><a href="<?= base_url('tagihan/nonrsm'); ?>">Tagihan Non RSM</a></li>
+                            <li><a href="<?= base_url('permohonan_atk/proses'); ?>">Tagihan RSM</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Laporan<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?= base_url('laporan/bulanan'); ?>">Tagihan Non RSM</a></li>
+                            <li><a href="<?= base_url('laporan/tahunan'); ?>">Tagihan RSM</a></li>
+                            
+                        </ul>
+                    </li>
+                    <?php } ?>
                 </ul>
 
             </div>

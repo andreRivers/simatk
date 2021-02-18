@@ -51,7 +51,7 @@ class Lkk_model extends CI_Model
 
     public function list_permohonan_selesai()
     {
-        $query = "SELECT * FROM at_atk where sts = 7  AND is_active = 1 GROUP BY username, created_at order by created_at ASC";
+        $query = "SELECT * FROM at_atk where is_active =1 AND sts BETWEEN 6 AND 7 GROUP BY username, created_at order by created_at ASC";
         return $this->db->query($query)->result_array();
     }
     

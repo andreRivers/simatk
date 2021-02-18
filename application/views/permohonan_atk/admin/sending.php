@@ -23,12 +23,10 @@
                                    <td> <?= date("d F Y", strtotime($at['created_at'])) ?> </td>
                                    <td>
                                         <?php if ($user['role_id'] == '2') { ?>
-                                             <?php if ($at['sts'] = 5) { ?>
+                                             <?php if ($at['sts'] = 6) { ?>
                                                   <a href="<?= base_url('validator/permohonan_atk/prosesDetail/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
-                                                  <!-- CETAK SERAH TERIMA -->
-                                                  <a href="<?= base_url('validator/permohonan_atk/cst/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-info" title="Detail"><i class="fa fa-print"></i> </a>
-                                                  <!-- Diterima -->
-                                                  <a href="<?= base_url('validator/permohonan_atk/diterima/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-warning" title="Detail"><i class="fa fa-handshake-o"></i> </a>
+                                                 
+                                                  
                                              <?php } ?>
                                         <?php } ?>
 

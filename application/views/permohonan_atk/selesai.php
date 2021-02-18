@@ -10,7 +10,7 @@
                     <tr>
                         <th>id</th>
                         <th>Permohonan</th>
-                        <th>#</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -43,8 +43,7 @@
                                     ?>
                                 </small>
                             </td>
-                            <td> <a href="" class="btn btn-danger" title="Batal"><i class="fa fa-times"></i> </a>
-                            </td>
+                            
                         </tr>
                     <?php endforeach; ?>
             </table>

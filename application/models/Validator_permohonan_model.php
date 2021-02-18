@@ -19,7 +19,13 @@ class Validator_permohonan_model extends CI_Model
 
     public function list_permohonan_shop()
     {
-        $query = "SELECT * FROM at_atk  where sts=5 AND is_active=1 GROUP BY username, created_at order by created_at ASC";
+        $query = "SELECT * FROM at_atk  where sts=4 AND is_active=1 GROUP BY username, created_at order by created_at ASC";
+        return $this->db->query($query)->result_array();
+    }
+
+    public function list_permohonan_sending()
+    {
+        $query = "SELECT * FROM at_atk  where sts =5 AND is_active =1 GROUP BY username, created_at order by created_at ASC";
         return $this->db->query($query)->result_array();
     }
 

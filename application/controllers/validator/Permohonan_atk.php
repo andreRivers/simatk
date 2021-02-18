@@ -272,6 +272,19 @@ class Permohonan_atk extends CI_Controller
 
     }
 
+    public function sending()
+    {
+        $data['title'] = 'Permohonan ATK';
+        $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
+        $data['atk'] = $this->Validator_permohonan_model->list_permohonan_sending();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('permohonan_atk/admin/nav', $data);
+        $this->load->view('permohonan_atk/admin/sending', $data);
+        $this->load->view('templates/footer');
+    }
+
+
     public function diterima($username, $created_at)
     {
         $data['title'] = 'Permohonan ATK';

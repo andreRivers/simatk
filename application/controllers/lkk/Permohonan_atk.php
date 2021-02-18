@@ -113,6 +113,7 @@ class Permohonan_atk extends CI_Controller
         $harga = $this->input->post('harga');
         $total = $this->input->post('total');
         $sts = 5;
+        $tagihan = 1;
 
         $log = [
             'username' => $this->input->post('username'),
@@ -128,6 +129,7 @@ class Permohonan_atk extends CI_Controller
         $this->db->set('pemasangan', $upah);
         $this->db->set('harga', $harga);
         $this->db->set('total', $total);
+        $this->db->set('tagihan', $tagihan);
         $this->db->set('sts', $sts);
         $this->db->where('id_atk', $id_atk);
         $this->db->update('at_atk');
@@ -203,6 +205,33 @@ class Permohonan_atk extends CI_Controller
           </div>');
           echo "<script>window.history.back(-1);</script>";	
 
+    }
+
+    public function tagihan($id_atk)
+    {
+        $data['title'] = 'Permohonan ATK';
+        $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
+
+        $tagihan = 2;
+        $date_tagihan = date("Y-m-d H:i:s");
+
+        $log = [
+            'username' => $this->input->post('username'),
+            'log' => "LKK Memasukan Tagihan Dengan ID = $id_atk",
+            'created_at' => time()
+        ];
+
+        $this->db->set('tagihan', $tagihan);
+        $this->db->set('date_tagihan', $date_tagihan);
+        $this->db->where('id_atk', $id_atk);
+        $this->db->update('at_atk');
+
+        $this->db->insert('at_log', $log);
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Behasil Memasukan Tagihan !
+          </div>');
+          echo "<script>window.history.back(-1);</script>";	
     }
 
     public function selesai()

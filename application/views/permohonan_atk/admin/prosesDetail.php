@@ -50,6 +50,18 @@
                                     }
 
                                     ?>
+                                      <?php if ($user['role_id'] == '4') { ?>
+                                        <?php
+                                    if ($at['tagihan'] == 1) {
+                                        echo '<span class="badge bg-blue">Belum Ditagih</span> ';
+                                    } elseif ($at['tagihan'] == 2) {
+                                        echo '<span class="badge bg-light-orange">Proses Penagihan</span>';
+                                    } elseif ($at['tagihan'] == 3) {
+                                        echo '<span class="badge bg-green">Sudah Lunas</span>';
+                                    ?>
+                                      <?php } ?>
+                                      <?php } ?>
+
                                 </small>
                                 <?php if ($user['role_id'] == '4') { ?>
                                     <td><?= number_format($at['total']); ?></td>
@@ -83,6 +95,19 @@
                                     <?php if ($at['sts'] == '3') { ?>
                                         <a href="<?= base_url('lkk/permohonan_atk/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Belanjakan"><i class="fa fa-shopping-cart"></i> </a>
                                         <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolakPimpinan"><i class="fa fa-times"></i> </button>
+                                    <?php } ?>
+
+                                    <?php if ($at['sts'] == '6') { ?>
+                                    
+                                        <?php if ($at['tagihan'] == '1') { ?>
+                                        <a href="<?= base_url('lkk/permohonan_atk/tagihan/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Masukan Ketagihan"><i class="fa fa-credit-card"></i> </a>
+                                        <?php } ?>
+                                    <?php } ?>
+
+                                    <?php if ($at['sts'] == '7') { ?>
+                                        <?php if ($at['tagihan'] == '1') { ?>
+                                        <a href="<?= base_url('lkk/permohonan_atk/tagihan/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Masukan Ketagihan"><i class="fa fa-credit-card"></i> </a>
+                                        <?php } ?>
                                     <?php } ?>
                                 <?php } ?>
 
