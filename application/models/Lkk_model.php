@@ -54,5 +54,19 @@ class Lkk_model extends CI_Model
         $query = "SELECT * FROM at_atk where is_active =1 AND sts BETWEEN 6 AND 7 GROUP BY username, created_at order by created_at ASC";
         return $this->db->query($query)->result_array();
     }
+
+    public function list_invoice()
+    {
+        $query = "SELECT * FROM at_atk  where is_active=1 AND tagihan=2 order by id_atk ASC";
+        return $this->db->query($query)->result_array();
+    }
+
+    public function list_tagihan()
+    {
+        $query = "SELECT * FROM at_atk  where is_active=1 AND tagihan=2 order by id_atk ASC";
+        return $this->db->query($query)->result_array();
+    }
     
 }
+
+

@@ -69,19 +69,27 @@
             <!-- ./col -->
         </div>
     <?php } ?>
+    <div class="callout callout-info">
+        <h4>VISI DAN MISI UMSU</h4>
+        <p style="text-align: justify;">Perguruan tinggi pada hakekatnya merupakan lembaga yang berfungsi untuk melestarikan, mengembangkan, menyebarluaskan, dan menggali ilmu pengetahuan dan teknologi. Selain itu perguruan tinggi juga berfungsi mengembangkan kualitas sumberdaya manusia dan menghasilkan jasa-jasa. Dalam era globalisasi, informasi, dan saling ketergantungan sebagaimana yang telah, sedang, dan akan berlangsung, peran perguruan tinggi menjadi semakin penting. Dalam era tersebut keunggulan suatu bangsa tidak lagi ditentukan oleh kekayaan sumberdaya alam yang dimilikinya, tetapi lebih ditentukan oleh kualitas sumberdaya manusia, penguasaan informasi, serta penguasaan ilmu pengetahuan dan teknologi.</p>
+        <p style="text-align: justify;">Berkaitan dengan persoalan di atas, eksistensi Universitas Muhammadiyah Sumatera Utara kedepan ditentukan oleh kemampuannya untuk memenuhi tuntutan kebutuhan-kebutuhan tersebut. Untuk memenuhi tuntutan-tuntutan tersebut, Universitas Muhammadiyah Sumatera Utara perlu secara terus-menerus mempertinggi daya saing dan daya juang guna mencapai keunggulan kompetitif berkelanjutan berdasarkan landasan filosofi dan pemikiran di atas, Universitas Muhammadiyah Sumatera Utara merumuskan visi, misi dan tujuan penyelenggaraan dan pengembangan sebagai berikut.</p>
+
+       </div>
 
     <div class="callout callout-info">
         <h4>Visi</h4>
 
-        <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
-            sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
-            links instead.</p>
+        <p>Menjadi Perguruan Tinggi yang unggul dalam membangun peradaban bangsa dengan mengembangkan ilmu pengetahuan, teknologi dan Sumber Daya manusia berdasarkan Al-Islam dan Kemuhammadiyahan</p>
     </div>
     <div class="callout callout-info">
-        <h4>Misi!</h4>
+        <h4>Misi</h4>
 
-        <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar
-            and the content will slightly differ than that of the normal layout.</p>
+        <p>Untuk mewujudkan visinya, Universitas Muhammadiyah Sumatera Utara memiliki misi sebagai berikut:</p>
+<ol>
+<li>Menyelenggarakan pendidikan dan pengajaran berdasarkan Al-Islam dan Kemuhammadiyahan.</li>
+<li>Menyelenggarakan penelitian, pengembangan ilmu pengetahuan dan teknologi berdasarkan Al-Islam dan Kemuhammadiyahan</li>
+<li>Melakukan pengabdian kepada masyarakat melalui pemberdayaan dan pengembangan kehidupan masyarakat berdasarkan Al-Islam dan Kemuhammadiyahan.</li>
+</ol>
     </div>
 
 </section>

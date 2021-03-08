@@ -245,4 +245,16 @@ class Permohonan_atk extends CI_Controller
         $this->load->view('permohonan_atk/admin/selesai', $data);
         $this->load->view('templates/footer');
     }
+
+    public function invoice()
+    {
+        $data['title'] = 'Invoice Permohonan ATK';
+        $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
+        $data['atk'] = $this->Lkk_model->list_invoice();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('permohonan_atk/admin/nav', $data);
+        $this->load->view('permohonan_atk/admin/invoice', $data);
+        $this->load->view('templates/footer');
+    }
 }

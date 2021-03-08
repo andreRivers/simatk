@@ -110,11 +110,11 @@
                                                         <i class="fa fa-gears"></i><br>
                                                         Accepted<small class="label pull-left bg-red"><?php echo $selesai->num_rows(); ?></small></a>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <a href="<?= base_url('lkk/permohonan_atk/invoice'); ?>" class="btn btn-block btn-primary btn-lg">
                                                         <i class="fa fa-gears"></i><br>
                                                         Invoice<small class="label pull-left bg-red"><?php echo $invoice->num_rows(); ?></small></a>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <a href="<?= base_url('lkk/permohonan_atk/tolak'); ?>" class="btn btn-block btn-primary btn-lg">
                                                         <i class="fa fa-times"></i><br>

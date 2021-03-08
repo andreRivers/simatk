@@ -15,14 +15,13 @@ class Auth extends CI_Controller
             redirect('user');
         }
 
-        $this->form_validation->set_rules('username', 'username', 'trim|required');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login Page';
-            $this->load->view('templates/auth_header', $data);
-            $this->load->view('auth/login');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('auth/login', $data);
+       
         } else {
             // validasinya success
             $this->_login();
@@ -72,7 +71,7 @@ class Auth extends CI_Controller
                         'created_at' => time()
                     ];
                     $this->db->insert('at_log', $log);
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
+                    $this->session->set_flashdata('flash_login', 'Password Salah!');
                     redirect('auth');
                 }
             } else {
@@ -82,7 +81,7 @@ class Auth extends CI_Controller
                     'created_at' => time()
                 ];
                 $this->db->insert('at_log', $log);
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">This username has not been activated!</div>');
+                $this->session->set_flashdata('flash_login', 'Akun Tidak Aktif!');
                 redirect('auth');
             }
         } else {
@@ -92,7 +91,7 @@ class Auth extends CI_Controller
                 'created_at' => time()
             ];
             $this->db->insert('at_log', $log);
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">username is not registered!</div>');
+            $this->session->set_flashdata('flash_login', 'Username Tidak Terdaftar!');
             redirect('auth');
         }
     }

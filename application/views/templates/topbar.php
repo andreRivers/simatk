@@ -19,7 +19,7 @@
     <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="<?= base_url('user'); ?>" class="navbar-brand"><b> <i class="fa fa-home"></i> DASHBOARD</b></a>
+                <a href="<?= base_url('user'); ?>" class="navbar-brand"><b> <i class="fa fa-home"></i> SIMPERATAS</b></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -42,28 +42,53 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Permohonan Atk <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="<?= base_url('permohonan_atk/input'); ?>">Buat Permohonan</a></li>
                             <?php if ($user['role_id'] == '1') { ?>
+                                <li><a href="<?= base_url('permohonan_atk/input'); ?>">Buat Permohonan</a></li>
                                 <li><a href="<?= base_url('permohonan_atk/proses'); ?>">List Permohonan</a></li>
                             <?php } ?>
+                            
                             <?php if ($user['role_id'] == '2') { ?>
+                                <li><a href="<?= base_url('permohonan_atk/input'); ?>">Buat Permohonan</a></li>
                                 <li><a href="<?= base_url('validator/permohonan_atk/proses'); ?>">List Permohonan</a></li>
                             <?php } ?>
+
                             <?php if ($user['role_id'] == '3') { ?>
+                                <li><a href="<?= base_url('permohonan_atk/input'); ?>">Buat Permohonan</a></li>
                                 <li><a href="<?= base_url('pimpinan/permohonan_atk/proses'); ?>">List Permohonan</a></li>
                             <?php } ?>
+                            
                             <?php if ($user['role_id'] == '4') { ?>
+                                <li><a href="<?= base_url('permohonan_atk/input'); ?>">Buat Permohonan</a></li>
                                 <li><a href="<?= base_url('lkk/permohonan_atk/proses'); ?>">List Permohonan</a></li>
                             <?php } ?>
+
+                            <?php if ($user['role_id'] == '10') { ?>
+                                <li><a href="<?= base_url('permohonan_atk_rsm/input'); ?>">Buat Permohonan</a></li>
+                                <li><a href="<?= base_url('permohonan_atk_rsm/proses'); ?>">List Permohonan</a></li>
+                            <?php } ?>
+
+                               
+                            <?php if ($user['role_id'] == '20') { ?>
+                                <li><a href="<?= base_url('permohonan_atk_rsm/input'); ?>">Buat Permohonan</a></li>
+                                <li><a href="<?= base_url('validatorRSM/permohonan_atk_rsm/proses'); ?>">List Permohonan</a></li>
+                            <?php } ?>
+
                         </ul>
                     </li>
 
                 <?php if ($user['role_id'] == '4') { ?>
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Permohonan Atk RSM <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?= base_url('lkk/permohonan_atk/proses'); ?>">List Permohonan</a></li>
+                        </ul>
+                    </li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Tagihan<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                             <li><a href="<?= base_url('tagihan/masukan'); ?>">Masukan Tagihan</a></li>
-                            <li><a href="<?= base_url('tagihan/nonrsm'); ?>">Tagihan Non RSM</a></li>
+                            <li><a href="<?= base_url('lkk/tagihan/tagihanKampus'); ?>">Tagihan Non RSM</a></li>
                             <li><a href="<?= base_url('permohonan_atk/proses'); ?>">Tagihan RSM</a></li>
                             
                         </ul>
@@ -164,7 +189,7 @@
         <section class="content-header">
             <h1>
                 Dashsoard
-                <small>Application 2.0</small>
+                <small>SIMPERATAS 2.0</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
