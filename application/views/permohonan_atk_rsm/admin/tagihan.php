@@ -41,14 +41,14 @@
                             <td><?= number_format($at['harga']); ?></td>
                             <td><?= number_format($at['total']); ?></td>
                             <td>
-                            <a href="<?= base_url('lkk/tagihan/unlist/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Unlist"><i class="fa fa-times"></i> </a>
+                            <a href="<?= base_url('lkk/tagihan_rsm/unlist/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Unlist"><i class="fa fa-times"></i> </a>
                            
                             </td>
                         </tr>
                     <?php endforeach; ?>
             </table>
-            <a href="<?= base_url('lkk/tagihan/invoice'); ?>" class="btn btn-primary" ><i class="fa fa-print"></i> Cetak Invoice</a>
-            <a href="<?= base_url('lkk/tagihan/lunas'); ?>" class="btn btn-danger" onClick="return confirm('Apakah Tagihan Ini Sudah Lunas ?')"><i class="fa fa-check"></i> Lunas</a>
+            <a href="<?= base_url('lkk/tagihan_rsm/invoice'); ?>" class="btn btn-primary" ><i class="fa fa-print"></i> Cetak Invoice</a>
+            <a href="<?= base_url('lkk/tagihan_rsm/lunas'); ?>" class="btn btn-danger" onClick="return confirm('Apakah Tagihan Ini Sudah Lunas ?')"><i class="fa fa-check"></i> Lunas</a>
         </div>
         <!-- /.box-body -->
     </div>

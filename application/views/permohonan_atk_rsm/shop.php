@@ -46,7 +46,7 @@
                             </td>
                             <td>
 
-                                <?php if ($user['role_id'] == '1') { ?>
+                                <?php if ($user['role_id'] == '10') { ?>
                                     <?php if ($at['sts'] < '20') { ?>
                                         <a href="<?= base_url('permohonan_atk_rsm/hapus/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Batal" onClick="return confirm('Apakah Anda Yakin?')"><i class="fa fa-times"></i> </a>
                                         <a href="<?= base_url('permohonan_atk_rsm/edit/'); ?><?= $at['id_atk']; ?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i> </a>

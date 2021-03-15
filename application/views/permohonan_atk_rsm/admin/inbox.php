@@ -32,7 +32,7 @@
 
                                         <?php if ($user['role_id'] == '20') { ?>
                                              <?php if ($at['sts'] == 10) { ?>
-                                                  <a href="<?= base_url('validator/permohonan_atk_rsm/prosesDetail/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
+                                                  <a href="<?= base_url('validatorRSM/permohonan_atk_rsm/prosesDetail/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
                                              <?php } ?>
                                         <?php } ?>
 

@@ -47,14 +47,14 @@
                                    </td>
                                    <td>
 
-                                        <?php if ($user['role_id'] == '1') { ?>
+                                        <?php if ($user['role_id'] == '10') { ?>
                                              <?php if ($at['sts'] < '20') { ?>
                                                   <a href="<?= base_url('permohonan_atk_rsm/hapus/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Batal" onClick="return confirm('Apakah Anda Yakin?')"><i class="fa fa-times"></i> </a>
                                                   <a href="<?= base_url('permohonan_atk_rsm/edit/'); ?><?= $at['id_atk']; ?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i> </a>
                                              <?php } ?>
                                         <?php } ?>
 
-                                        <?php if ($user['role_id'] == '2') { ?>
+                                        <?php if ($user['role_id'] == '20') { ?>
                                              <?php if ($at['sts'] == '10') { ?>
                                                   <a href="<?= base_url('validator/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
                                                   <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolak"><i class="fa fa-times"></i> </button>

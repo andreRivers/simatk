@@ -75,7 +75,7 @@
                     $proses = $this->db->query("SELECT * FROM at_atk where sts=30 AND is_active=1");
                     $shop = $this->db->query("SELECT * FROM at_atk where sts=40 AND is_active=1");
                     $sending = $this->db->query("SELECT * FROM at_atk where sts=50 AND is_active=1");
-                    $selesai = $this->db->query("SELECT * FROM at_atk where sts BETWEEN 60 AND 70 AND is_active=1 AND tagihan=1");
+                    $selesai = $this->db->query("SELECT * FROM at_atk where sts BETWEEN 60 AND 70 AND is_active=1 AND tagihan=10");
                     $invoice = $this->db->query("SELECT * FROM at_atk where is_active=1 AND tagihan=2");
                     $tolak = $this->db->query("SELECT * FROM at_atk where sts=80 AND is_active=1");
                     ?>

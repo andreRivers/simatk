@@ -13,7 +13,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
-          <form method="POST" action="<?= base_url('validator/permohonan_atk/diterimaGo'); ?>"  enctype="multipart/form-data">
+          <form method="POST" action="<?= base_url('validatorRSM/permohonan_atk_rsm/diterimaGo'); ?>"  enctype="multipart/form-data">
             
 
                <div id="signature"></div>

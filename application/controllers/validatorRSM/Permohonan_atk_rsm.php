@@ -54,7 +54,7 @@ class Permohonan_atk_rsm extends CI_Controller
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> Permohonan Anda Sudah Akan Kami Proses !
           </div>');
-            redirect('validator/permohonan_atk_rsm/proses');
+            redirect('validatorRSM/permohonan_atk_rsm/proses');
         }
     }
 
@@ -103,7 +103,7 @@ class Permohonan_atk_rsm extends CI_Controller
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> Permohonan Anda Berhasil Diubah !
           </div>');
-        redirect('validator/permohonan_atk_rsm/proses');
+        redirect('validatorRSM/permohonan_atk_rsm/proses');
     }
 
     public function hapus($id_atk)
@@ -128,7 +128,7 @@ class Permohonan_atk_rsm extends CI_Controller
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> Permohonan Anda Berhasil dihapus !
           </div>');
-        redirect('validator/permohonan_atk_rsm/proses');
+        redirect('validatorRSM/permohonan_atk_rsm/proses');
     }
 
     public function setuju($id_atk)
@@ -185,7 +185,7 @@ class Permohonan_atk_rsm extends CI_Controller
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> Permohonan Anda Berhasil ditolak !
           </div>');
-        redirect('validator/permohonan_atk_rsm/proses');
+        redirect('validatorRSM/permohonan_atk_rsm/proses');
     }
 
     public function inbox()
@@ -322,7 +322,7 @@ class Permohonan_atk_rsm extends CI_Controller
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> Permohonan Anda Berhasil dihapus !
           </div>');
-        redirect('validator/permohonan_atk_rsm/pengambilan');
+        redirect('validatorRSM/permohonan_atk_rsm/pengambilan');
 
     }
 

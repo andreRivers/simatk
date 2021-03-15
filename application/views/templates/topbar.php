@@ -15,6 +15,16 @@
     $notif = $this->db->query("SELECT * FROM at_atk where sts=3 AND is_active=1");
 } ?>
 
+<?php if ($user['role_id'] == '10') {
+    $username = $this->session->userdata('username');
+    $notif = $this->db->query("SELECT * FROM at_atk where username='$username' AND sts=60 AND is_active=1");
+} ?>
+
+
+<?php if ($user['role_id'] == '20') {
+    $notif = $this->db->query("SELECT * FROM at_atk where sts=10 AND is_active=1");
+} ?>
+
 <header class="main-header">
     <nav class="navbar navbar-static-top">
         <div class="container">
@@ -81,7 +91,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Permohonan Atk RSM <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                                <li><a href="<?= base_url('lkk/permohonan_atk/proses'); ?>">List Permohonan</a></li>
+                                <li><a href="<?= base_url('lkk/permohonan_atk_rsm/proses'); ?>">List Permohonan</a></li>
                         </ul>
                     </li>
 
@@ -89,7 +99,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Tagihan<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="<?= base_url('lkk/tagihan/tagihanKampus'); ?>">Tagihan Non RSM</a></li>
-                            <li><a href="<?= base_url('permohonan_atk/proses'); ?>">Tagihan RSM</a></li>
+                            <li><a href="<?= base_url('lkk/tagihan_rsm/tagihanRsm'); ?>">Tagihan RSM</a></li>
                             
                         </ul>
                     </li>
@@ -97,12 +107,22 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Laporan<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="<?= base_url('laporan/bulanan'); ?>">Tagihan Non RSM</a></li>
-                            <li><a href="<?= base_url('laporan/tahunan'); ?>">Tagihan RSM</a></li>
+                            <li><a href="<?= base_url('lkk/permohonan_atk/laporan'); ?>">Tagihan Non RSM</a></li>
+                            <li><a href="<?= base_url('lkk/permohonan_atk_rsm/laporan'); ?>">Tagihan RSM</a></li>
                             
                         </ul>
                     </li>
                     <?php } ?>
+
+                    <?php if ($user['role_id'] == '3') { ?>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-file"></i> Permohonan Atk RSM <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?= base_url('pimpinan/permohonan_atk_rsm/proses'); ?>">List Permohonan</a></li>
+                    </ul>
+                </li>
+                <?php } ?>
                 </ul>
 
             </div>
@@ -138,6 +158,21 @@
 
                         <?php if ($user['role_id'] == '4') { ?>
                             <a href="<?= base_url('lkk/permohonan_atk/proses'); ?>">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning"><?php echo $notif->num_rows(); ?></span>
+                            </a>
+                        <?php } ?>
+
+                        <?php if ($user['role_id'] == '10') { ?>
+                            <a href="<?= base_url('permohonan_atk_rsm/pengambilan'); ?>">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning"><?php echo $notif->num_rows(); ?></span>
+                            </a>
+                        <?php } ?>
+
+
+                        <?php if ($user['role_id'] == '20') { ?>
+                            <a href="<?= base_url('validatorRSM/permohonan_atk_rsm/proses'); ?>">
                                 <i class="fa fa-bell-o"></i>
                                 <span class="label label-warning"><?php echo $notif->num_rows(); ?></span>
                             </a>

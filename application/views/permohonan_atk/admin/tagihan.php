@@ -74,9 +74,9 @@
 <footer class="main-footer">
     <div class="container">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.0.0
+            <b>Version</b> 2.2.1
         </div>
-        <strong>Copyright &copy; 2014-2019 <a href="">SIMPERATAS</a>.</strong> All rights
+        <strong>Copyright &copy; <?= date('Y');?> <a href="">SIMPERATAS</a>.</strong> All rights
         reserved.
     </div>
     <!-- /.container -->

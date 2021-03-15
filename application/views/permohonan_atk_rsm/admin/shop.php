@@ -23,30 +23,30 @@
                                    <td> <?= date("d F Y", strtotime($at['created_at'])) ?> </td>
                                    <td>
 
-                                        <?php if ($user['role_id'] == '1') { ?>
-                                             <?php if ($at['sts'] < '2') { ?>
-                                                  <a href="<?= base_url('permohonan_atk/hapus/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Batal" onClick="return confirm('Apakah Anda Yakin?')"><i class="fa fa-times"></i> </a>
-                                                  <a href="<?= base_url('permohonan_atk/edit/'); ?><?= $at['id_atk']; ?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i> </a>
+                                        <?php if ($user['role_id'] == '10') { ?>
+                                             <?php if ($at['sts'] < '20') { ?>
+                                                  <a href="<?= base_url('permohonan_atk_rsm/hapus/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Batal" onClick="return confirm('Apakah Anda Yakin?')"><i class="fa fa-times"></i> </a>
+                                                  <a href="<?= base_url('permohonan_atk_rsm/edit/'); ?><?= $at['id_atk']; ?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i> </a>
                                              <?php } ?>
                                         <?php } ?>
 
-                                        <?php if ($user['role_id'] == '2') { ?>
-                                             <?php if ($at['sts'] == 4) { ?>
-                                                  <a href="<?= base_url('validator/permohonan_atk/prosesDetail/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
+                                        <?php if ($user['role_id'] == '20') { ?>
+                                             <?php if ($at['sts'] == 40) { ?>
+                                                  <a href="<?= base_url('validatorRSM/permohonan_atk_rsm/prosesDetail/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
                                              <?php } ?>
                                         <?php } ?>
 
                                         <?php if ($user['role_id'] == '3') { ?>
-                                             <?php if ($at['sts'] == '2') { ?>
-                                                  <a href="<?= base_url('pimpinan/permohonan_atk/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
+                                             <?php if ($at['sts'] == '20') { ?>
+                                                  <a href="<?= base_url('pimpinan/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
                                                   <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolakPimpinan"><i class="fa fa-times"></i> </button>
                                              <?php } ?>
                                         <?php } ?>
 
 
                                         <?php if ($user['role_id'] == '4') { ?>
-                                             <?php if ($at['sts'] == '4') { ?>
-                                                  <a href="<?= base_url('lkk/permohonan_atk/prosesDetailShop/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
+                                             <?php if ($at['sts'] == '40') { ?>
+                                                  <a href="<?= base_url('lkk/permohonan_atk_rsm/prosesDetailShop/'); ?><?= $at['username']; ?>/<?= $at['created_at']; ?>" class="btn btn-success" title="Detail"><i class="fa fa-eye"></i> </a>
                                              <?php } ?>
                                         <?php } ?>
 
@@ -79,7 +79,7 @@
                     <h4 class="modal-title">Berikan Tanggapan Penolakan.</h4>
                </div>
                <div class="modal-body">
-                    <form method="post" action="<?= base_url('validator/permohonan_atk/tolakGo/'); ?>">
+                    <form method="post" action="<?= base_url('validatorRSM/permohonan_atk_rsm/tolakGo/'); ?>">
                          <div class="form-group">
                               <label for="usr">ID Permohonan:</label>
                               <input type="text" class="form-control" id="id_atk" name="id_atk" value="<?= $at['id_atk']; ?>" readonly required>
@@ -111,7 +111,7 @@
                     <h4 class="modal-title">Berikan Tanggapan Penolakan.</h4>
                </div>
                <div class="modal-body">
-                    <form method="post" action="<?= base_url('pimpinan/permohonan_atk/tolakGo/'); ?>">
+                    <form method="post" action="<?= base_url('pimpinan/permohonan_atk_rsm/tolakGo/'); ?>">
                          <div class="form-group">
                               <label for="usr">ID Permohonan:</label>
                               <input type="text" class="form-control" id="id_atk" name="id_atk" value="<?= $at['id_atk']; ?>" readonly required>

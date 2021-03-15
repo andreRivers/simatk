@@ -1,24 +1,24 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Permohonan_atk extends CI_Controller
+class Permohonan_atk_rsm extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
         is_logged_in();
-        $this->load->model('Lkk_model');
+        $this->load->model('Lkk_model_rsm');
     }
 
     public function proses()
     {
-        $data['title'] = 'Permohonan ATK';
+        $data['title'] = 'Permohonan ATK RSM';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan();
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/proses', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/proses', $data);
         $this->load->view('templates/footer');
     }
 
@@ -26,11 +26,11 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_detail($username, $created_at);
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_detail($username, $created_at);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/prosesDetail',$data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/prosesDetail',$data);
         $this->load->view('templates/footer');
     }
 
@@ -39,7 +39,7 @@ class Permohonan_atk extends CI_Controller
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
 
-        $sts = 4;
+        $sts = 40;
         $date_shop = date("Y-m-d H:i:s");
 
         $log = [
@@ -66,22 +66,22 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_shop();
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_shop();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/shop', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/shop', $data);
         $this->load->view('templates/footer');
     }
     public function prosesDetailShop($username, $created_at)
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_shop_detail($username, $created_at);
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_shop_detail($username, $created_at);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/shopDetail',$data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/shopDetail',$data);
         $this->load->view('templates/footer');
     }
 
@@ -93,8 +93,8 @@ class Permohonan_atk extends CI_Controller
         $data['atk'] = $this->db->get_where('at_atk', ['id_atk' => $id_atk])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/inputHarga', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/inputHarga', $data);
         $this->load->view('templates/footer');
     }
 
@@ -112,8 +112,8 @@ class Permohonan_atk extends CI_Controller
         $upah = $this->input->post('upah');
         $harga = $this->input->post('harga');
         $total = $this->input->post('total');
-        $sts = 5;
-        $tagihan = 1;
+        $sts = 50;
+        $tagihan =10;
 
         $log = [
             'username' => $this->input->post('username'),
@@ -147,11 +147,11 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_pengambilan();
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_pengambilan();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/pengambilan', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/pengambilan', $data);
         $this->load->view('templates/footer');
     }
 
@@ -160,11 +160,11 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_sending();
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_sending();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/sending', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/sending', $data);
         $this->load->view('templates/footer');
     }
 
@@ -174,9 +174,9 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_detail($username, $created_at);
-        $data['tk'] = $this->Lkk_model->list_permohonan_cetak($username, $created_at);
-        $this->load->view('permohonan_atk/cetak/ba',$data);
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_detail($username, $created_at);
+        $data['tk'] = $this->Lkk_model_rsm->list_permohonan_cetak($username, $created_at);
+        $this->load->view('permohonan_atk_rsm/cetak/ba',$data);
 
     }
 
@@ -185,7 +185,7 @@ class Permohonan_atk extends CI_Controller
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
 
-        $sts = 6;
+        $sts = 60;
 
         $log = [
             'username' => $this->input->post('username'),
@@ -212,7 +212,7 @@ class Permohonan_atk extends CI_Controller
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
 
-        $tagihan = 2;
+        $tagihan =20;
         $date_tagihan = date("Y-m-d H:i:s");
 
         $log = [
@@ -238,11 +238,11 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_permohonan_selesai();
+        $data['atk'] = $this->Lkk_model_rsm->list_permohonan_selesai();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/selesai', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/selesai', $data);
         $this->load->view('templates/footer');
     }
 
@@ -250,26 +250,28 @@ class Permohonan_atk extends CI_Controller
     {
         $data['title'] = 'Invoice Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_invoice();
+        $data['atk'] = $this->Lkk_model_rsm->list_invoice();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/nav', $data);
-        $this->load->view('permohonan_atk/admin/invoice', $data);
+        $this->load->view('permohonan_atk_rsm/admin/nav', $data);
+        $this->load->view('permohonan_atk_rsm/admin/invoice', $data);
         $this->load->view('templates/footer');
     }
-    
+
+        
     public function laporan()
     {
         $data['title'] = 'Permohonan ATK';
         $data['user'] = $this->db->get_where('at_user', ['username' => $this->session->userdata('username')])->row_array();
-        $data['atk'] = $this->Lkk_model->list_tagihan();
+        $data['atk'] = $this->Lkk_model_rsm->list_tagihan();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('permohonan_atk/admin/laporan', $data);
+        $this->load->view('permohonan_atk_rsm/admin/laporan', $data);
         $this->load->view('templates/footer', $data);
 
     }
 
+    
     public function cetakLaporan()
     {
         $data['title'] = 'Permohonan ATK';
@@ -278,8 +280,7 @@ class Permohonan_atk extends CI_Controller
         $tgl_awal = $this->input->post('tgl_awal');
         $tgl_akhir = $this->input->post('tgl_akhir');
 
-        $data['lap'] = $this->Lkk_model->list_laporan_cetak($tgl_awal, $tgl_akhir);
-        $this->load->view('permohonan_atk/cetak/laporan',$data);
+        $data['lap'] = $this->Lkk_model_rsm->list_laporan_cetak($tgl_awal, $tgl_akhir);
+        $this->load->view('permohonan_atk_rsm/cetak/laporan',$data);
     }
-
 }

@@ -76,7 +76,7 @@
 
                                 <?php if ($user['role_id'] == '20') { ?>
                                     <?php if ($at['sts'] == '10') { ?>
-                                        <a href="<?= base_url('validator/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
+                                        <a href="<?= base_url('validatorRSM/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
                                         <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolak"><i class="fa fa-times"></i> </button>
                                     <?php } ?>
                                 <?php } ?>

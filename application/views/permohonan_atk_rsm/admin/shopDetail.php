@@ -28,19 +28,19 @@
                                         <?= date("d F Y", strtotime($at['created_at'])) ?></i><br>
                                     Keterangan : <?= $at['ket']; ?><br>
                                     <?php
-                                    if ($at['sts'] == 1) {
+                                    if ($at['sts'] == 10) {
                                         echo '<span class="badge bg-grey">Permohonan Terkirim</span> ';
-                                    } elseif ($at['sts'] == 2) {
+                                    } elseif ($at['sts'] == 20) {
                                         echo '<span class="badge bg-light-blue">Proccess</span>';
-                                    } elseif ($at['sts'] == 3) {
+                                    } elseif ($at['sts'] == 30) {
                                         echo '<span class="badge bg-blue">Aproved</span>';
-                                    } elseif ($at['sts'] == 4) {
+                                    } elseif ($at['sts'] == 40) {
                                         echo '<span class="badge bg-orange">Shopping</span>';
-                                    } elseif ($at['sts'] == 5) {
+                                    } elseif ($at['sts'] == 50) {
                                         echo '<span class="badge bg-red">Sending</span>';
-                                    } elseif ($at['sts'] == 6) {
+                                    } elseif ($at['sts'] == 60) {
                                         echo '<span class="badge bg-green">Pick up</span>';
-                                    }  elseif ($at['sts'] == 7) {
+                                    }  elseif ($at['sts'] == 70) {
                                         echo '<span class="badge bg-green">Finish</span>';
                                     }  else {
                                         echo '<span class="badge bg-default">Rejected</span>';
@@ -51,38 +51,38 @@
                             </td>
                             <td>
 
-                                <?php if ($user['role_id'] == '1') { ?>
-                                    <?php if ($at['sts'] < '2') { ?>
-                                        <a href="<?= base_url('permohonan_atk/hapus/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Batal" onClick="return confirm('Apakah Anda Yakin?')"><i class="fa fa-times"></i> </a>
-                                        <a href="<?= base_url('permohonan_atk/edit/'); ?><?= $at['id_atk']; ?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i> </a>
+                                <?php if ($user['role_id'] == '10') { ?>
+                                    <?php if ($at['sts'] < '20') { ?>
+                                        <a href="<?= base_url('permohonan_atk_rsm/hapus/'); ?><?= $at['id_atk']; ?>" class="btn btn-danger" title="Batal" onClick="return confirm('Apakah Anda Yakin?')"><i class="fa fa-times"></i> </a>
+                                        <a href="<?= base_url('permohonan_atk_rsm/edit/'); ?><?= $at['id_atk']; ?>" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i> </a>
                                     <?php } ?>
                                 <?php } ?>
 
-                                <?php if ($user['role_id'] == '2') { ?>
-                                    <?php if ($at['sts'] == '1') { ?>
-                                        <a href="<?= base_url('validator/permohonan_atk/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
+                                <?php if ($user['role_id'] == '20') { ?>
+                                    <?php if ($at['sts'] == '10') { ?>
+                                        <a href="<?= base_url('validator/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
                                         <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolak"><i class="fa fa-times"></i> </button>
                                     <?php } ?>
                                 <?php } ?>
 
                                 <?php if ($user['role_id'] == '3') { ?>
-                                    <?php if ($at['sts'] == '2') { ?>
-                                        <a href="<?= base_url('pimpinan/permohonan_atk/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
+                                    <?php if ($at['sts'] == '20') { ?>
+                                        <a href="<?= base_url('pimpinan/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Setuju"><i class="fa fa-check"></i> </a>
                                         <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolakPimpinan"><i class="fa fa-times"></i> </button>
                                     <?php } ?>
                                 <?php } ?>
 
 
                                 <?php if ($user['role_id'] == '4') { ?>
-                                    <?php if ($at['sts'] == '3') { ?>
-                                        <a href="<?= base_url('lkk/permohonan_atk/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Belanjakan"><i class="fa fa-shopping-cart"></i> </a>
+                                    <?php if ($at['sts'] == '30') { ?>
+                                        <a href="<?= base_url('lkk/permohonan_atk_rsm/setuju/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Belanjakan"><i class="fa fa-shopping-cart"></i> </a>
                                         <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolakPimpinan"><i class="fa fa-times"></i> </button>
                                     <?php } ?>
                                 <?php } ?>
 
                                 <?php if ($user['role_id'] == '4') { ?>
-                                    <?php if ($at['sts'] == '4') { ?>
-                                        <a href="<?= base_url('lkk/permohonan_atk/inputHarga/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Input Harga"><i class="fa fa-money"></i> </a>
+                                    <?php if ($at['sts'] == '40') { ?>
+                                        <a href="<?= base_url('lkk/permohonan_atk_rsm/inputHarga/'); ?><?= $at['id_atk']; ?>" class="btn btn-success" title="Input Harga"><i class="fa fa-money"></i> </a>
                                        
                                         <button type="button" class="btn btn-danger" title="Tolak" data-toggle="modal" data-target="#tolak"><i class="fa fa-times"></i> </button>
                                     <?php } ?>
@@ -115,7 +115,7 @@
                 <h4 class="modal-title">Berikan Tanggapan Penolakan.</h4>
             </div>
             <div class="modal-body">
-                <form method="post" action="<?= base_url('lkk/permohonan_atk/tolakGo/'); ?>">
+                <form method="post" action="<?= base_url('lkk/permohonan_atk_rsm/tolakGo/'); ?>">
                     <div class="form-group">
                         <label for="usr">ID Permohonan:</label>
                         <input type="text" class="form-control" id="id_atk" name="id_atk" value="<?= $at['id_atk']; ?>" readonly required>
